@@ -4,9 +4,10 @@ import Image from "next/image";
 import { useState } from "react";
 
 const links = [
-  { label: "What We Do", href: "#services" },
-  { label: "How We Work", href: "#solutions" },
-  { label: "Get In Touch", href: "#contact" },
+  { label: "What We Do", href: "/#services" },
+  { label: "How We Work", href: "/#solutions" },
+  { label: "News", href: "/#news" },
+  { label: "Get In Touch", href: "/#contact" },
 ];
 
 export default function Header() {
