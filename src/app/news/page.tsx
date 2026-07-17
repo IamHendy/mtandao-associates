@@ -13,17 +13,19 @@ export default function NewsPage() {
 
         <div className="space-y-8">
           {news.map((n) => (
-            <Link
-              key={n.slug}
-              href={`/news/${n.slug}`}
-              className="block border-b border-white/10 pb-8 hover:opacity-80 transition"
-            >
+            <div key={n.slug} className="border-b border-white/10 pb-8">
               <p className="font-mono text-xs text-muted mb-2">
                 {n.category} · {new Date(n.date).toLocaleDateString("en-KE", { year: "numeric", month: "long", day: "numeric" })}
               </p>
               <h2 className="font-display text-xl mb-2">{n.title}</h2>
-              <p className="text-muted text-sm">{n.excerpt}</p>
-            </Link>
+              <p className="text-muted text-sm mb-4">{n.excerpt}</p>
+              <Link
+                href={`/news/${n.slug}`}
+                className="text-signal text-sm font-medium hover:underline"
+              >
+                Read more →
+              </Link>
+            </div>
           ))}
         </div>
       </section>

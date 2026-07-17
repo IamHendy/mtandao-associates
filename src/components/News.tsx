@@ -13,17 +13,22 @@ export default function News() {
 
       <div className="grid md:grid-cols-3 gap-6">
         {latest.map((n) => (
-          <Link
+          <div
             key={n.slug}
-            href={`/news/${n.slug}`}
-            className="block border border-white/10 rounded-lg p-6 bg-panel/50 hover:border-signal/40 transition"
+            className="flex flex-col border border-white/10 rounded-lg p-6 bg-panel/50 hover:border-signal/40 transition"
           >
             <p className="font-mono text-xs text-muted mb-3">
               {n.category} · {new Date(n.date).toLocaleDateString("en-KE", { year: "numeric", month: "long", day: "numeric" })}
             </p>
             <h3 className="font-display text-lg mb-2">{n.title}</h3>
-            <p className="text-muted text-sm">{n.excerpt}</p>
-          </Link>
+            <p className="text-muted text-sm mb-5 flex-1">{n.excerpt}</p>
+            <Link
+              href={`/news/${n.slug}`}
+              className="text-signal text-sm font-medium hover:underline w-fit"
+            >
+              Read more →
+            </Link>
+          </div>
         ))}
       </div>
 

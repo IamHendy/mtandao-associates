@@ -1,21 +1,28 @@
 "use client";
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { highlights } from "@/data/highlights";
 
+const SLIDE_DURATION = 5000;
+
 export default function Carousel() {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
 
-  const next = useCallback(() => setIndex((i) => (i + 1) % highlights.length), []);
+  const next = useCallback(() => {
+    setIndex((i) => (i + 1) % highlights.length);
+  }, []);
   const prev = () => setIndex((i) => (i - 1 + highlights.length) % highlights.length);
 
   useEffect(() => {
     if (paused) return;
-    const t = setInterval(next, 5000);
-    return () => clearInterval(t);
-  }, [paused, next]);
+    timerRef.current = setInterval(next, SLIDE_DURATION);
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current);
+    };
+  }, [paused, next, index]); // index included so timer resets after manual nav
 
   const Active = highlights[index];
   const Icon = Active.icon;
@@ -44,18 +51,10 @@ export default function Carousel() {
           </motion.div>
         </AnimatePresence>
 
-        <button
-          onClick={prev}
-          aria-label="Previous highlight"
-          className="absolute left-3 top-1/2 -translate-y-1/2 text-muted hover:text-ink transition p-2"
-        >
+        <button onClick={prev} aria-label="Previous highlight" className="absolute left-3 top-1/2 -translate-y-1/2 text-muted hover:text-ink transition p-2">
           <ChevronLeft className="w-5 h-5" />
         </button>
-        <button
-          onClick={next}
-          aria-label="Next highlight"
-          className="absolute right-3 top-1/2 -translate-y-1/2 text-muted hover:text-ink transition p-2"
-        >
+        <button onClick={next} aria-label="Next highlight" className="absolute right-3 top-1/2 -translate-y-1/2 text-muted hover:text-ink transition p-2">
           <ChevronRight className="w-5 h-5" />
         </button>
       </div>
@@ -66,10 +65,19 @@ export default function Carousel() {
             key={i}
             onClick={() => setIndex(i)}
             aria-label={`Go to slide ${i + 1}`}
-            className={`w-2 h-2 rounded-full transition ${
-              i === index ? "bg-signal" : "bg-white/20"
-            }`}
-          />
+            className="relative w-8 h-1.5 rounded-full bg-white/15 overflow-hidden"
+          >
+            {i === index && !paused && (
+              <motion.div
+                key={index}
+                className="absolute inset-0 bg-signal"
+                initial={{ width: "0%" }}
+                animate={{ width: "100%" }}
+                transition={{ duration: SLIDE_DURATION / 1000, ease: "linear" }}
+              />
+            )}
+            {i === index && paused && <div className="absolute inset-0 bg-signal" />}
+          </button>
         ))}
       </div>
     </section>
