@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { services } from "@/data/services";
 
 export default function Services() {
@@ -9,20 +10,23 @@ export default function Services() {
       </h2>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {services.map((s) => (
-          <div key={s.title} className="border border-white/10 rounded-lg p-6 bg-panel/50 hover:border-secure/40 transition">
+          <div
+            key={s.slug}
+            className="border border-white/10 rounded-lg p-6 bg-panel/50 hover:border-signal/40 transition"
+          >
             <h3 className="font-display text-lg mb-2">{s.title}</h3>
-            <p className="text-muted text-sm">{s.desc}</p>
+            <p className="text-muted text-sm">{s.summary}</p>
           </div>
         ))}
       </div>
-                <div className="mt-12">
-  
-    <a href="/services"
-    className="inline-block border border-signal text-signal font-medium px-6 py-3 rounded-md hover:bg-signal hover:text-graphite transition"
-  >
-    See full service details
-  </a>
-</div>
+      <div className="mt-12">
+        <Link
+          href="/services"
+          className="inline-block border border-signal text-signal font-medium px-6 py-3 rounded-md hover:bg-signal hover:text-graphite transition"
+        >
+          See full service details
+        </Link>
+      </div>
     </section>
   );
 }
