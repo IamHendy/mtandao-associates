@@ -15,6 +15,14 @@ export default function Services() {
           </div>
         ))}
       </div>
+                <div className="mt-12">
+  
+    <a href="/services"
+    className="inline-block border border-signal text-signal font-medium px-6 py-3 rounded-md hover:bg-signal hover:text-graphite transition"
+  >
+    See full service details
+  </a>
+</div>
     </section>
   );
 }
