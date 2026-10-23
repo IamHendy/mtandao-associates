@@ -9,13 +9,11 @@ export default function ServicesPage() {
       <Header />
 
       <section className="max-w-4xl mx-auto px-6 pt-32 pb-24">
-        <p className="font-mono text-signal text-sm mb-3">OUR SERVICES</p>
-
-        <h1 className="font-display text-4xl mb-6">What we do, in detail</h1>
+        <h1 className="font-display text-4xl mb-6">Our services in detail</h1>
 
         <p className="text-muted mb-16 max-w-xl">
-          Every engagement starts with understanding your environment —
-          here&apos;s exactly what each service covers.
+          Every engagement starts with understanding your environment. Below is
+          what each service covers.
         </p>
 
         <div className="space-y-14">
@@ -25,13 +23,16 @@ export default function ServicesPage() {
               id={s.slug}
               className="border-t border-white/10 pt-8"
             >
-              <h2 className="font-display text-2xl mb-4">{s.title}</h2>
+              <h2 className="font-display text-2xl mb-4">
+                <Link href={`/services/${s.slug}`} className="hover:text-signal transition">
+                  {s.title}
+                </Link>
+              </h2>
 
-              <ul className="space-y-2">
+              <ul className="space-y-2 list-disc pl-5 marker:text-signal">
                 {s.details.map((d, i) => (
-                  <li key={i} className="text-muted text-sm flex gap-3">
-                    <span className="text-signal">—</span>
-                    <span>{d}</span>
+                  <li key={i} className="text-muted text-sm">
+                    {d}
                   </li>
                 ))}
               </ul>
@@ -42,7 +43,7 @@ export default function ServicesPage() {
         <div className="mt-16">
           <Link
             href="/#contact"
-            className="inline-block bg-signal text-graphite font-medium px-6 py-3 rounded-md hover:brightness-110 transition"
+            className="inline-block bg-signal text-graphite font-medium px-6 py-3 rounded-sm hover:brightness-110 transition"
           >
             Request a review
           </Link>

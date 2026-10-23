@@ -54,10 +54,24 @@ export default function Footer() {
             </Link>
 
             <Link
+              href="/training"
+              className="text-muted hover:text-ink transition"
+            >
+              Training
+            </Link>
+
+            <Link
               href="/#contact"
               className="text-muted hover:text-ink transition"
             >
               Get In Touch
+            </Link>
+
+            <Link
+              href="/terms"
+              className="text-muted hover:text-ink transition"
+            >
+              Terms and Conditions
             </Link>
           </div>
         </div>
@@ -80,8 +94,13 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-white/10 py-6 text-center text-xs text-muted">
-        © {new Date().getFullYear()} Mtandao Associates. All rights reserved.
+      <div className="border-t border-white/10">
+        <div className="max-w-6xl mx-auto px-6 py-6 flex flex-col sm:flex-row gap-3 justify-between text-xs text-muted">
+          <p>© {new Date().getFullYear()} Mtandao Associates. All rights reserved.</p>
+          <Link href="/terms" className="hover:text-ink transition">
+            Terms and Conditions
+          </Link>
+        </div>
       </div>
     </footer>
   );

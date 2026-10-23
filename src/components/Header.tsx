@@ -1,12 +1,13 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 const links = [
   { label: "What We Do", href: "/#services" },
   { label: "How We Work", href: "/#solutions" },
-  { label: "News", href: "/#news" },
+  { label: "Training", href: "/training" },
   { label: "Get In Touch", href: "/#contact" },
 ];
 
@@ -17,7 +18,7 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-graphite/80 backdrop-blur border-b border-white/10">
       <div className="max-w-6xl mx-auto flex h-16 items-center justify-between px-6">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-3">
+        <Link href="/" className="flex items-center gap-3">
           <Image
             src="/logo.png"
             alt="Mtandao Associates"
@@ -28,7 +29,7 @@ export default function Header() {
           <span className="hidden font-display text-sm tracking-wide sm:block">
             MTANDAO ASSOCIATES
           </span>
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-8 md:flex">
@@ -42,12 +43,12 @@ export default function Header() {
             </a>
           ))}
 
-          <a
-            href="#contact"
-            className="rounded-md bg-signal px-4 py-2 text-sm font-medium text-graphite transition hover:brightness-110"
+          <Link
+            href="/#contact"
+            className="rounded-sm bg-signal px-4 py-2 text-sm font-medium text-graphite transition hover:brightness-110"
           >
             Request a Review
-          </a>
+          </Link>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -78,13 +79,13 @@ export default function Header() {
             </a>
           ))}
 
-          <a
-            href="#contact"
+          <Link
+            href="/#contact"
             onClick={() => setOpen(false)}
-            className="mt-4 block rounded-md bg-signal px-4 py-3 text-center text-sm font-medium text-graphite transition hover:brightness-110"
+            className="mt-4 block rounded-sm bg-signal px-4 py-3 text-center text-sm font-medium text-graphite transition hover:brightness-110"
           >
             Request a Review
-          </a>
+          </Link>
         </nav>
       )}
     </header>

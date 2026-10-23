@@ -1,0 +1,14 @@
+Service card photos, downloaded 23 October 2026 from Pexels.
+Pexels licence: free for commercial use, no attribution required (https://www.pexels.com/license/).
+None of these are reused in the home page slider (public/slides/).
+
+firewall-appliance.jpg   https://www.pexels.com/photo/13963756/
+endpoint-laptop.jpg      https://www.pexels.com/photo/5483248/
+ai-automation.jpg        https://www.pexels.com/photo/1181330/
+systems-audit.jpg        https://www.pexels.com/photo/1181341/
+grc.jpg                  https://www.pexels.com/photo/5685868/
+software-code.jpg        https://www.pexels.com/photo/6424583/
+sacco-systems.jpg        https://www.pexels.com/photo/8872359/
+aml-antifraud.jpg        https://www.pexels.com/photo/6266273/
+crm.jpg                  https://www.pexels.com/photo/7689748/
+training.jpg             https://www.pexels.com/photo/17471201/

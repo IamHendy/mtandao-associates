@@ -1,0 +1,10 @@
+Slider media, downloaded 23 October 2026 from Pexels.
+Pexels licence: free for commercial use, no attribution required (https://www.pexels.com/license/).
+
+network-cables.jpg          https://www.pexels.com/photo/6466143/
+engineer-servers.jpg        https://www.pexels.com/photo/1181354/
+training-class.jpg          https://www.pexels.com/photo/33920044/
+grc-presentation.jpg        https://www.pexels.com/photo/9301257/
+endpoint-security.jpg       https://www.pexels.com/photo/4973899/
+network-cables.mp4          https://www.pexels.com/video/1085656/
+network-cables-poster.jpg   poster frame of the video above

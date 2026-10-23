@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-graphite: #0A0A0B;   /* true near-black, matches logo bg */
-  --color-panel: #161616;      /* raised surface */
-  --color-ink: #F5F5F5;        /* primary text, off-white */
-  --color-muted: #9A9A9A;      /* secondary text, gray */
-  --color-signal: #E31E24;     /* logo red — CTAs, warnings, accents */
-  --color-secure: #F5F5F5;     /* "all clear" white instead of teal */
+  --color-graphite: #0A0A0B;
+  --color-panel: #161616;
+  --color-ink: #F5F5F5;
+  --color-muted: #9A9A9A;
+  --color-signal: #E31E24;
+  --color-secure: #F5F5F5;
 
   --font-display: var(--font-display);
   --font-body: var(--font-body);
@@ -18,10 +18,158 @@
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
   }
 }
 
+/* Logo intro on first load: logo pops in, a red bar fills, then the screen fades away */
+.splash {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-graphite);
+  animation: splash-out 450ms ease-in 1500ms forwards;
+}
+.splash-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.splash-logo {
+  animation: logo-pop 700ms cubic-bezier(0.34, 1.56, 0.64, 1) 100ms both;
+}
+.splash-bar {
+  display: block;
+  width: 140px;
+  height: 2px;
+  background: var(--color-signal);
+  transform-origin: left;
+  animation: splash-bar 900ms ease-out 450ms both;
+}
+.splash-seen .splash {
+  display: none;
+}
+@keyframes logo-pop {
+  from { opacity: 0; transform: scale(0.6); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes splash-bar {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+@keyframes splash-out {
+  to { opacity: 0; visibility: hidden; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .splash { display: none; }
+}
+
+/* How We Work flowchart: arrows draw in, loop line dashes travel back to the start */
+.flow-arrow path,
+.flow-arrow line {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 500ms ease-out;
+  transition-delay: inherit;
+}
+[data-visible="true"] .flow-arrow path,
+[data-visible="true"] .flow-arrow line {
+  stroke-dashoffset: 0;
+}
+
+.flow-dash-x,
+.flow-dash-y {
+  position: absolute;
+  --dash: var(--color-signal) 0 8px, transparent 8px 14px;
+}
+.flow-dash-x {
+  height: 2px;
+  background: repeating-linear-gradient(90deg, var(--dash));
+  animation: flow-left 0.9s linear infinite;
+}
+.flow-dash-y {
+  width: 2px;
+  background: repeating-linear-gradient(180deg, var(--dash));
+}
+.flow-dash-y.up {
+  animation: flow-up 0.9s linear infinite;
+}
+.flow-dash-y.down {
+  animation: flow-down 0.9s linear infinite;
+}
+/* Loop line stays dim, then lights up and speeds up while the walkthrough returns to step 1 */
+.flow-loop .flow-dash-x,
+.flow-loop .flow-dash-y {
+  opacity: 0.35;
+  transition: opacity 400ms ease;
+}
+.flow-loop[data-returning="true"] .flow-dash-x,
+.flow-loop[data-returning="true"] .flow-dash-y {
+  opacity: 1;
+  animation-duration: 0.35s;
+}
+
+/* Walkthrough: a glowing dot runs along the arrow into the newly active step */
+.flow-dot {
+  fill: var(--color-signal);
+  filter: drop-shadow(0 0 4px var(--color-signal));
+}
+.flow-dot-x {
+  animation: flow-dot-x 700ms ease-in-out forwards;
+}
+.flow-dot-y {
+  animation: flow-dot-y 700ms ease-in-out forwards;
+}
+@keyframes flow-dot-x {
+  0% { transform: translateX(0); opacity: 1; }
+  85% { opacity: 1; }
+  100% { transform: translateX(44px); opacity: 0; }
+}
+@keyframes flow-dot-y {
+  0% { transform: translateY(0); opacity: 1; }
+  85% { opacity: 1; }
+  100% { transform: translateY(32px); opacity: 0; }
+}
+
+/* Active step: progress bar fills like a video timeline, icon gives a soft ping */
+.flow-progress {
+  width: 0;
+  animation-name: flow-progress;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+@keyframes flow-progress {
+  to { width: 100%; }
+}
+.flow-ping {
+  animation: flow-ping 1.6s ease-out infinite;
+}
+@keyframes flow-ping {
+  0% { transform: scale(1); opacity: 0.5; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+.flow-spin {
+  animation: flow-spin 700ms ease-in-out;
+}
+@keyframes flow-spin {
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes flow-left {
+  to { background-position: -14px 0; }
+}
+@keyframes flow-up {
+  to { background-position: 0 -14px; }
+}
+@keyframes flow-down {
+  to { background-position: 0 14px; }
+}
+
 ::selection {
-  background: #F5A623;
-  color: #0B0F14;
+  background: #E31E24;
+  color: #F5F5F5;
 }
