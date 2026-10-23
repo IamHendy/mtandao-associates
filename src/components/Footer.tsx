@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-panel/50">
+    <footer className="border-t border-line/10 bg-panel/50">
       <div className="max-w-6xl mx-auto px-6 py-12 grid md:grid-cols-3 gap-10">
         <div>
           <div className="flex items-center gap-3 mb-4">
@@ -94,7 +94,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-white/10">
+      <div className="border-t border-line/10">
         <div className="max-w-6xl mx-auto px-6 py-6 flex flex-col sm:flex-row gap-3 justify-between text-xs text-muted">
           <p>© {new Date().getFullYear()} Mtandao Associates. All rights reserved.</p>
           <Link href="/terms" className="hover:text-ink transition">

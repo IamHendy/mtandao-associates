@@ -1,16 +1,61 @@
 @import "tailwindcss";
 
+/* `light:` targets the light theme (set on <html data-theme> by the script in layout.tsx) */
+@custom-variant light (&:where([data-theme="light"], [data-theme="light"] *));
+
 @theme inline {
-  --color-graphite: #0A0A0B;
-  --color-panel: #161616;
-  --color-ink: #F5F5F5;
-  --color-muted: #9A9A9A;
-  --color-signal: #E31E24;
-  --color-secure: #F5F5F5;
+  --color-graphite: var(--bg);        /* page background */
+  --color-panel: var(--panel);        /* raised surface */
+  --color-panel-hover: var(--panel-hover);
+  --color-panel-active: var(--panel-active);
+  --color-ink: var(--ink);            /* primary text */
+  --color-muted: var(--muted);        /* secondary text */
+  --color-line: var(--line);          /* borders and dividers, used with opacity (line/10) */
+  --color-signal: #E31E24;            /* logo red: CTAs and accents */
+  --color-secure: var(--ink);
 
   --font-display: var(--font-display);
   --font-body: var(--font-body);
   --font-mono: var(--font-mono);
+}
+
+:root {
+  color-scheme: dark;
+  --bg: #0A0A0B;
+  --panel: #161616;
+  --panel-hover: #1B1B1B;
+  --panel-active: #1C1414;
+  --ink: #F5F5F5;
+  --muted: #9A9A9A;
+  --line: #FFFFFF;
+}
+
+/* Light theme: chosen with the toggle, or the system setting when no choice is saved */
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #FAFAF8;
+  --panel: #FFFFFF;
+  --panel-hover: #F2F2EF;
+  --panel-active: #FFF3F3;
+  --ink: #141414;
+  --muted: #555555;
+  --line: #000000;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    color-scheme: light;
+    --bg: #FAFAF8;
+    --panel: #FFFFFF;
+    --panel-hover: #F2F2EF;
+    --panel-active: #FFF3F3;
+    --ink: #141414;
+    --muted: #555555;
+    --line: #000000;
+  }
+}
+
+body {
+  transition: background-color 250ms ease, color 250ms ease;
 }
 
 @media (prefers-reduced-motion: reduce) {

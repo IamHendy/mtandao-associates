@@ -30,7 +30,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="max-w-6xl mx-auto px-6 py-24 border-t border-white/10">
+    <section id="contact" className="max-w-6xl mx-auto px-6 py-24 border-t border-line/10">
       <h2 className="font-display text-3xl mb-3">Get in touch</h2>
       <p className="text-muted mb-10 max-w-xl">
         Tell us a bit about your network and what you need. We reply by email or phone,
@@ -41,19 +41,19 @@ export default function Contact() {
         <form onSubmit={handleSubmit} className="space-y-4">
           <input
             name="name" required placeholder="Full name"
-            className="w-full bg-panel border border-white/10 rounded-md px-4 py-3 text-ink placeholder:text-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secure"
+            className="w-full bg-panel border border-line/10 rounded-md px-4 py-3 text-ink placeholder:text-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secure"
           />
           <input
             name="email" type="email" required placeholder="Email"
-            className="w-full bg-panel border border-white/10 rounded-md px-4 py-3 text-ink placeholder:text-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secure"
+            className="w-full bg-panel border border-line/10 rounded-md px-4 py-3 text-ink placeholder:text-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secure"
           />
           <input
             name="phone" placeholder="Phone (optional)"
-            className="w-full bg-panel border border-white/10 rounded-md px-4 py-3 text-ink placeholder:text-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secure"
+            className="w-full bg-panel border border-line/10 rounded-md px-4 py-3 text-ink placeholder:text-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secure"
           />
           <textarea
             name="message" required rows={4} placeholder="What do you need help with?"
-            className="w-full bg-panel border border-white/10 rounded-md px-4 py-3 text-ink placeholder:text-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secure"
+            className="w-full bg-panel border border-line/10 rounded-md px-4 py-3 text-ink placeholder:text-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secure"
           />
           <button
             type="submit"

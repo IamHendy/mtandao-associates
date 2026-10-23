@@ -62,14 +62,14 @@ export default function TrainingPage() {
         <h2 className="font-display text-2xl mt-20 mb-8">What we teach</h2>
         <div className="grid sm:grid-cols-2 gap-6">
           {courses.map((c) => (
-            <div key={c.title} className="group border border-white/10 rounded-sm p-6 bg-panel/50 transition duration-300 ease-out hover:-translate-y-1 hover:border-signal/60 hover:shadow-[0_18px_40px_-18px_rgba(227,30,36,0.45)]">
+            <div key={c.title} className="group border border-line/10 rounded-sm p-6 bg-panel/50 transition duration-300 ease-out hover:-translate-y-1 hover:border-signal/60 hover:shadow-[0_18px_40px_-18px_rgba(227,30,36,0.45)]">
               <h3 className="font-display text-lg mb-2 transition-colors duration-300 group-hover:text-signal">{c.title}</h3>
               <p className="text-muted text-sm">{c.desc}</p>
             </div>
           ))}
         </div>
 
-        <div className="mt-16 border-t border-white/10 pt-8">
+        <div className="mt-16 border-t border-line/10 pt-8">
           <p className="text-muted mb-4">
             Want training arranged for your own team? Tell us how many people and which topics.
           </p>

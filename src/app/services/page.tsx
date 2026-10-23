@@ -21,7 +21,7 @@ export default function ServicesPage() {
             <div
               key={s.slug}
               id={s.slug}
-              className="border-t border-white/10 pt-8"
+              className="border-t border-line/10 pt-8"
             >
               <h2 className="font-display text-2xl mb-4">
                 <Link href={`/services/${s.slug}`} className="hover:text-signal transition">

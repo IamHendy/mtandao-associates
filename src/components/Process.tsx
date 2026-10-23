@@ -93,8 +93,8 @@ function StepBox({
         onClick={onSelect}
         className={`group relative h-full cursor-pointer overflow-hidden border rounded-sm p-5 transition-all duration-500 ease-out hover:border-signal/60 hover:opacity-100 ${
           active
-            ? "border-signal bg-[#1c1414] shadow-[0_20px_45px_-20px_rgba(227,30,36,0.6)] lg:-translate-y-1.5"
-            : "border-white/10 bg-panel"
+            ? "border-signal bg-panel-active shadow-[0_20px_45px_-20px_rgba(227,30,36,0.6)] lg:-translate-y-1.5"
+            : "border-line/10 bg-panel"
         } ${state === "dimmed" ? "opacity-80" : "opacity-100"}`}
       >
         <span
@@ -104,7 +104,7 @@ function StepBox({
         />
         <span
           className={`absolute right-4 top-2 font-display text-5xl font-bold select-none transition-colors duration-500 ${
-            active ? "text-signal/20" : "text-white/[0.06]"
+            active ? "text-signal/20" : "text-line/[0.06]"
           }`}
           aria-hidden="true"
         >
@@ -123,7 +123,7 @@ function StepBox({
         <p className="font-mono text-xs text-signal mb-1">Step {step.n}</p>
         <h3 className="font-display text-xl mb-2">{step.title}</h3>
         <p className="text-muted text-sm mb-5">{step.desc}</p>
-        <p className="text-xs border-t border-white/10 pt-3">
+        <p className="text-xs border-t border-line/10 pt-3">
           <span className="text-muted">You get: </span>
           <span className="text-ink font-medium">{step.output}</span>
         </p>
@@ -197,7 +197,7 @@ export default function Process() {
   const shown = Math.max(active, 0);
 
   return (
-    <section className="max-w-6xl mx-auto px-6 py-24 border-t border-white/10" id="solutions">
+    <section className="max-w-6xl mx-auto px-6 py-24 border-t border-line/10" id="solutions">
       <h2 className="font-display text-3xl mb-3">How we work</h2>
       <p className="text-muted mb-12 max-w-xl">
         Most engagements follow these four steps, from the first audit to ongoing support.
@@ -279,7 +279,7 @@ export default function Process() {
             type="button"
             onClick={() => goTo((shown - 1 + steps.length) % steps.length)}
             aria-label="Previous step"
-            className="p-2 border border-white/15 rounded-sm text-muted hover:text-ink hover:border-white/40 transition"
+            className="p-2 border border-line/15 rounded-sm text-muted hover:text-ink hover:border-line/40 transition"
           >
             <ChevronLeft className="w-4 h-4" />
           </button>
@@ -299,7 +299,7 @@ export default function Process() {
             type="button"
             onClick={() => goTo((shown + 1) % steps.length)}
             aria-label="Next step"
-            className="p-2 border border-white/15 rounded-sm text-muted hover:text-ink hover:border-white/40 transition"
+            className="p-2 border border-line/15 rounded-sm text-muted hover:text-ink hover:border-line/40 transition"
           >
             <ChevronRight className="w-4 h-4" />
           </button>

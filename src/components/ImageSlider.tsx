@@ -45,7 +45,7 @@ export default function ImageSlider() {
       onFocus={() => setPaused(true)}
       onBlur={() => setPaused(false)}
     >
-      <div className="relative aspect-[16/9] md:aspect-[21/9] overflow-clip rounded-sm border border-white/10 bg-panel">
+      <div className="relative aspect-[16/9] md:aspect-[21/9] overflow-clip rounded-sm border border-line/10 bg-panel">
         <div
           className="flex h-full transition-transform duration-700 ease-out"
           style={{ transform: `translateX(-${index * 100}%)` }}
@@ -84,8 +84,8 @@ export default function ImageSlider() {
                 />
               )}
               <div className="absolute inset-x-0 bottom-0 bg-black/70 px-6 py-4 md:px-10">
-                <p className="font-display text-xl md:text-2xl">{s.title}</p>
-                <p className="text-muted text-sm mt-1">{s.caption}</p>
+                <p className="font-display text-xl md:text-2xl text-white">{s.title}</p>
+                <p className="text-white/75 text-sm mt-1">{s.caption}</p>
               </div>
             </div>
           ))}
@@ -94,14 +94,14 @@ export default function ImageSlider() {
         <button
           onClick={prev}
           aria-label="Previous slide"
-          className="absolute left-3 top-1/2 -translate-y-1/2 bg-black/50 p-2 rounded-sm text-ink hover:bg-black/70 transition"
+          className="absolute left-3 top-1/2 -translate-y-1/2 bg-black/50 p-2 rounded-sm text-white hover:bg-black/70 transition"
         >
           <ChevronLeft className="w-5 h-5" />
         </button>
         <button
           onClick={next}
           aria-label="Next slide"
-          className="absolute right-3 top-1/2 -translate-y-1/2 bg-black/50 p-2 rounded-sm text-ink hover:bg-black/70 transition"
+          className="absolute right-3 top-1/2 -translate-y-1/2 bg-black/50 p-2 rounded-sm text-white hover:bg-black/70 transition"
         >
           <ChevronRight className="w-5 h-5" />
         </button>
@@ -114,7 +114,7 @@ export default function ImageSlider() {
             onClick={() => setIndex(i)}
             aria-label={`Show slide ${i + 1}: ${s.title}`}
             aria-current={i === index}
-            className={`h-1 w-8 transition ${i === index ? "bg-signal" : "bg-white/20 hover:bg-white/40"}`}
+            className={`h-1 w-8 transition ${i === index ? "bg-signal" : "bg-line/20 hover:bg-line/40"}`}
           />
         ))}
       </div>

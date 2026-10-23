@@ -14,7 +14,7 @@ export default function Services() {
         {services.map((s) => (
           <div
             key={s.slug}
-            className="group flex flex-col border border-white/10 rounded-sm bg-panel/50 overflow-hidden transition duration-300 ease-out hover:-translate-y-1.5 hover:border-signal/60 hover:shadow-[0_18px_40px_-18px_rgba(227,30,36,0.45)] focus-within:border-signal/60"
+            className="group flex flex-col border border-line/10 rounded-sm bg-panel/50 overflow-hidden transition duration-300 ease-out hover:-translate-y-1.5 hover:border-signal/60 hover:shadow-[0_18px_40px_-18px_rgba(227,30,36,0.45)] focus-within:border-signal/60"
           >
             <div className="relative aspect-[16/10] overflow-hidden">
               <Image

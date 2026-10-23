@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import ThemeToggle from "@/components/ThemeToggle";
 import { useState } from "react";
 
 const links = [
@@ -15,7 +16,7 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-graphite/80 backdrop-blur border-b border-white/10">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-graphite/80 backdrop-blur border-b border-line/10">
       <div className="max-w-6xl mx-auto flex h-16 items-center justify-between px-6">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3">
@@ -43,6 +44,8 @@ export default function Header() {
             </a>
           ))}
 
+          <ThemeToggle />
+
           <Link
             href="/#contact"
             className="rounded-sm bg-signal px-4 py-2 text-sm font-medium text-graphite transition hover:brightness-110"
@@ -51,29 +54,31 @@ export default function Header() {
           </Link>
         </nav>
 
-        {/* Mobile Menu Button */}
-        <button
-          type="button"
-          className="md:hidden"
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
-          aria-expanded={open}
-        >
-          <div className="mb-1.5 h-0.5 w-6 bg-ink" />
-          <div className="mb-1.5 h-0.5 w-6 bg-ink" />
-          <div className="h-0.5 w-6 bg-ink" />
-        </button>
+        {/* Mobile: theme toggle and menu button */}
+        <div className="flex items-center gap-4 md:hidden">
+          <ThemeToggle />
+          <button
+            type="button"
+            onClick={() => setOpen(!open)}
+            aria-label="Toggle menu"
+            aria-expanded={open}
+          >
+            <div className="mb-1.5 h-0.5 w-6 bg-ink" />
+            <div className="mb-1.5 h-0.5 w-6 bg-ink" />
+            <div className="h-0.5 w-6 bg-ink" />
+          </button>
+        </div>
       </div>
 
       {/* Mobile Navigation */}
       {open && (
-        <nav className="border-t border-white/10 px-6 pb-4 md:hidden">
+        <nav className="border-t border-line/10 px-6 pb-4 md:hidden">
           {links.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="block border-b border-white/5 py-3 text-muted transition hover:text-ink"
+              className="block border-b border-line/5 py-3 text-muted transition hover:text-ink"
             >
               {link.label}
             </a>

@@ -15,7 +15,7 @@ const clients = [
 
 export default function Hero() {
   return (
-    <section className="border-b border-white/10">
+    <section className="border-b border-line/10">
       <div className="max-w-6xl mx-auto px-6 pt-36 pb-20 grid md:grid-cols-2 gap-14 items-start">
         <div>
           <h1 className="font-display text-4xl md:text-5xl leading-tight mb-6">
@@ -35,7 +35,7 @@ export default function Hero() {
             </a>
             <a
               href="tel:+254727589335"
-              className="inline-block border border-white/20 text-ink font-medium px-6 py-3 rounded-sm hover:border-white/40 transition"
+              className="inline-block border border-line/20 text-ink font-medium px-6 py-3 rounded-sm hover:border-line/40 transition"
             >
               Call 0727 589 335
             </a>

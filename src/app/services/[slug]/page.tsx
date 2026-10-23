@@ -39,7 +39,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
         <h1 className="font-display text-4xl mt-6 mb-8">{service.title}</h1>
 
-        <div className="relative aspect-[16/9] mb-10 overflow-hidden rounded-sm border border-white/10">
+        <div className="relative aspect-[16/9] mb-10 overflow-hidden rounded-sm border border-line/10">
           <Image
             src={service.image}
             alt=""
@@ -73,7 +73,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           {service.slug === "training" && (
             <Link
               href="/training"
-              className="inline-block border border-white/20 text-ink font-medium px-6 py-3 rounded-sm hover:border-white/40 transition"
+              className="inline-block border border-line/20 text-ink font-medium px-6 py-3 rounded-sm hover:border-line/40 transition"
             >
               See our training
             </Link>
@@ -81,14 +81,14 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         </div>
       </article>
 
-      <section className="max-w-6xl mx-auto px-6 pb-24 border-t border-white/10 pt-16">
+      <section className="max-w-6xl mx-auto px-6 pb-24 border-t border-line/10 pt-16">
         <h2 className="font-display text-2xl mb-8">Other services</h2>
         <div className="grid md:grid-cols-3 gap-6">
           {others.map((s) => (
             <Link
               key={s.slug}
               href={`/services/${s.slug}`}
-              className="group block border border-white/10 rounded-sm p-6 bg-panel/50 transition duration-300 ease-out hover:-translate-y-1 hover:border-signal/60 hover:shadow-[0_18px_40px_-18px_rgba(227,30,36,0.45)]"
+              className="group block border border-line/10 rounded-sm p-6 bg-panel/50 transition duration-300 ease-out hover:-translate-y-1 hover:border-signal/60 hover:shadow-[0_18px_40px_-18px_rgba(227,30,36,0.45)]"
             >
               <h3 className="font-display text-lg mb-2 transition-colors duration-300 group-hover:text-signal">{s.title}</h3>
               <p className="text-muted text-sm">{s.summary}</p>
