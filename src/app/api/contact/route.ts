@@ -1,8 +1,12 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
 
-// Where contact form messages are delivered. Set CONTACT_TO_EMAIL to override.
-const CONTACT_TO = process.env.CONTACT_TO_EMAIL || "mtandaoassociates@gmail.com";
+// Where contact form messages are delivered. Set CONTACT_TO_EMAIL to override;
+// separate several addresses with commas to send to more than one person.
+const CONTACT_TO = (process.env.CONTACT_TO_EMAIL || "mtandaoassociates@gmail.com,mtandaoinstituteoftechnology@gmail.com")
+  .split(",")
+  .map((address) => address.trim())
+  .filter(Boolean);
 
 export async function POST(req: Request) {
   const { name, email, phone, message } = await req.json();
