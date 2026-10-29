@@ -18,7 +18,7 @@ export async function POST(req: Request) {
 
   const resend = new Resend(process.env.RESEND_API_KEY);
   const { error } = await resend.emails.send({
-    from: "Mtandao Website <onboarding@resend.dev>", // swap for your verified domain sender
+    from: "Mtandao Website <website@mtandaoassociates.com>", // domain must be verified in Resend
     to: CONTACT_TO,
     replyTo: email,
     subject: `New inquiry from ${name}`,
