@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -12,6 +13,10 @@ export const metadata: Metadata = {
 const INSTITUTE_URL = "https://mtandaoinstitute.co.ke";
 
 const courses = [
+  {
+    title: "Cyber Security Awareness",
+    desc: "For all staff: common threats like malware, spear phishing and ransomware, and how to recognise and handle them.",
+  },
   {
     title: "Cybersecurity",
     desc: "Practical security skills: firewalls, endpoint protection, threat detection and incident response.",
@@ -58,6 +63,23 @@ export default function TrainingPage() {
         >
           Learn more at Mtandao Institute
         </a>
+
+        <h2 className="font-display text-2xl mt-20 mb-4">Cyber Security Awareness Training</h2>
+        <p className="text-muted mb-8 max-w-2xl">
+          Most breaches start with a human error, often a single email. This course shows
+          staff the threats they will meet, why email matters so much, and the skills to
+          recognise and handle an attack before it reaches the business.
+        </p>
+        <figure className="rounded-sm border border-line/10 bg-white p-4 sm:p-6">
+          <Image
+            src="/training/awareness-training.png"
+            alt="Cyber Security Awareness Training covers common cyber threats (malware, spear phishing, ransomware), why it matters (human errors, protecting the business), the role of emails (information sharing, client communication) and employee skills (recognising and handling threats)."
+            width={1610}
+            height={674}
+            sizes="(max-width: 896px) 100vw, 848px"
+            className="w-full h-auto"
+          />
+        </figure>
 
         <h2 className="font-display text-2xl mt-20 mb-8">What we teach</h2>
         <div className="grid sm:grid-cols-2 gap-6">

@@ -70,14 +70,6 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           >
             Ask us about this service
           </Link>
-          {service.slug === "training" && (
-            <Link
-              href="/training"
-              className="inline-block border border-line/20 text-ink font-medium px-6 py-3 rounded-sm hover:border-line/40 transition"
-            >
-              See our training
-            </Link>
-          )}
         </div>
       </article>
 

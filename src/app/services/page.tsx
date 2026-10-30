@@ -12,8 +12,9 @@ export default function ServicesPage() {
         <h1 className="font-display text-4xl mb-6">Our services in detail</h1>
 
         <p className="text-muted mb-16 max-w-xl">
-          Every engagement starts with understanding your environment. Below is
-          what each service covers.
+          Mtandao Associates implements enterprise-grade security solutions that
+          protect the critical network assets of businesses of all types and sizes,
+          through simplicity. Below is what each service covers.
         </p>
 
         <div className="space-y-14">

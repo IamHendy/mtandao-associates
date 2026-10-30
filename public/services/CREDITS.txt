@@ -1,14 +1,18 @@
-Service card photos, downloaded 23 October 2026 from Pexels.
+Service card photos from Pexels (downloaded 23 and 30 October 2026).
 Pexels licence: free for commercial use, no attribution required (https://www.pexels.com/license/).
 None of these are reused in the home page slider (public/slides/).
 
-firewall-appliance.jpg   https://www.pexels.com/photo/13963756/
-endpoint-laptop.jpg      https://www.pexels.com/photo/5483248/
-ai-automation.jpg        https://www.pexels.com/photo/1181330/
-systems-audit.jpg        https://www.pexels.com/photo/1181341/
-grc.jpg                  https://www.pexels.com/photo/5685868/
-software-code.jpg        https://www.pexels.com/photo/6424583/
-sacco-systems.jpg        https://www.pexels.com/photo/8872359/
-aml-antifraud.jpg        https://www.pexels.com/photo/6266273/
-crm.jpg                  https://www.pexels.com/photo/7689748/
-training.jpg             https://www.pexels.com/photo/17471201/
+firewall-appliance.jpg    https://www.pexels.com/photo/13963756/
+endpoint-laptop.jpg       https://www.pexels.com/photo/5483248/
+systems-audit.jpg         https://www.pexels.com/photo/1181341/
+software-code.jpg         https://www.pexels.com/photo/6424583/
+aml-antifraud.jpg         https://www.pexels.com/photo/6266273/
+crm.jpg                   https://www.pexels.com/photo/7689748/
+mfa.jpg                   https://www.pexels.com/photo/33440144/
+sd-wan.jpg                https://www.pexels.com/photo/2881224/
+email-security.jpg        https://www.pexels.com/photo/5605061/
+backup-recovery.jpg       https://www.pexels.com/photo/17489160/
+managed-services.jpg      https://www.pexels.com/photo/1181354/
+wifi-access-point.jpg     https://www.pexels.com/photo/29711663/
+
+data-protection.jpg       Supplied by Mtandao Associates (GDPR / DPA word cloud).
