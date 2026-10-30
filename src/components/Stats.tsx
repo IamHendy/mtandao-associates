@@ -49,9 +49,14 @@ export default function Stats() {
       <Image src="/slides/engineer-servers.jpg" alt="" fill sizes="100vw" className="object-cover" />
       <div className="absolute inset-0 bg-bar/85" />
       <div className="relative max-w-6xl mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-6">
-        {stats.map(({ icon: Icon, value, label }) => (
-          <div key={label} className="rounded-md border border-white/15 bg-white/5 px-4 py-8 text-center backdrop-blur-sm">
-            <Icon className="mx-auto mb-4 w-9 h-9 text-signal" aria-hidden="true" />
+        {stats.map(({ icon: Icon, value, label }, i) => (
+          <div
+            key={label}
+            data-reveal
+            style={{ "--d": `${i * 100}ms` } as React.CSSProperties}
+            className="group rounded-md border border-white/15 bg-white/5 px-4 py-8 text-center backdrop-blur-sm transition-[border-color,background-color,translate] duration-300 hover:-translate-y-1.5 hover:border-signal/60 hover:bg-white/10"
+          >
+            <Icon className="icon-bounce mx-auto mb-4 w-9 h-9 text-signal" aria-hidden="true" />
             <p className="font-display text-3xl md:text-4xl font-bold tabular-nums">
               {Math.round(value * progress).toLocaleString()}+
             </p>

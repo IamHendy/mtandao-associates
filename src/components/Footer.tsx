@@ -32,11 +32,7 @@ export default function Footer() {
           <p className="font-display text-lg uppercase tracking-widest mb-6">Contact</p>
           <div className="space-y-3 text-sm">
             <p>
-              P.O. Box 35899-00625
-              <br />
-              Morrison House, 4th Floor,
-              <br />
-              Mombasa Road,
+              Utawala,
               <br />
               Nairobi, Kenya.
             </p>
@@ -59,7 +55,7 @@ export default function Footer() {
           <ul className="space-y-3 text-sm">
             {links.map((l) => (
               <li key={l.href}>
-                <Link href={l.href} className="hover:text-signal transition">
+                <Link href={l.href} className="inline-block transition hover:translate-x-1 hover:text-signal">
                   {l.label}
                 </Link>
               </li>

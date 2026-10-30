@@ -35,7 +35,7 @@ export default function Contact() {
       <div className="relative min-h-80 flex items-center">
         <Image src="/slides/network-cables.jpg" alt="" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
         <div className="absolute inset-0 bg-bar/85" />
-        <div className="relative px-6 py-16 sm:px-12 lg:px-16 max-w-xl ml-auto text-white">
+        <div className="relative px-6 py-16 sm:px-12 lg:px-16 max-w-xl ml-auto text-white" data-reveal>
           <h2 className="font-display text-3xl font-bold mb-5">
             Get the Best Network Solutions to Secure Your Network
           </h2>
@@ -62,7 +62,7 @@ export default function Contact() {
           Tell us a bit about your network and what you need. We reply by email or phone,
           usually within one working day.
         </p>
-        <form onSubmit={handleSubmit} className="space-y-4 max-w-xl">
+        <form onSubmit={handleSubmit} className="space-y-4 max-w-xl" data-reveal style={{ "--d": "150ms" } as React.CSSProperties}>
           <input
             name="name" required placeholder="Full name"
             className="w-full bg-graphite border border-line/15 rounded-md px-4 py-3 text-ink placeholder:text-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secure"
@@ -82,7 +82,7 @@ export default function Contact() {
           <button
             type="submit"
             disabled={status === "sending"}
-            className="bg-signal text-white font-medium px-6 py-3 rounded-md hover:brightness-110 transition disabled:opacity-50"
+            className="btn-shine bg-signal text-white font-medium px-6 py-3 rounded-md hover:brightness-110 disabled:opacity-50"
           >
             {status === "sending" ? "Sending..." : "Send message"}
           </button>

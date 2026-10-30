@@ -24,8 +24,8 @@ export default function Services() {
       <div className="max-w-6xl mx-auto px-6">
         <SectionHeading title="Our Services" light />
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {featured.map((s) => (
-            <ServiceCard key={s.href} {...s} />
+          {featured.map((s, i) => (
+            <ServiceCard key={s.href} {...s} index={i} />
           ))}
         </div>
       </div>

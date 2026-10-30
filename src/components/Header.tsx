@@ -64,7 +64,7 @@ export default function Header() {
               <MapPin className="w-8 h-8 text-signal" aria-hidden="true" />
               <div>
                 <p className="font-display font-bold text-sm uppercase">Location</p>
-                <p className="text-muted text-sm">Morrison House, 4th Floor</p>
+                <p className="text-muted text-sm">Utawala, Nairobi</p>
               </div>
             </div>
             <div className="flex items-center gap-3">
@@ -78,7 +78,7 @@ export default function Header() {
 
           <Link
             href="/#contact"
-            className="hidden md:inline-block rounded-md bg-signal px-5 py-3 text-sm font-medium text-white transition hover:brightness-110"
+            className="btn-shine hidden md:inline-block rounded-md bg-signal px-5 py-3 text-sm font-medium text-white transition hover:brightness-110"
           >
             Request For a Quote
           </Link>
@@ -103,7 +103,7 @@ export default function Header() {
           {links.map((link, i) => (
             <span key={link.href} className="flex items-center">
               {i > 0 && <span className="h-3.5 w-px bg-white/30 mx-5" aria-hidden="true" />}
-              <a href={link.href} className="text-sm font-medium uppercase tracking-wide hover:text-signal transition">
+              <a href={link.href} className="nav-link text-sm font-medium uppercase tracking-wide hover:text-signal transition">
                 {link.label}
               </a>
             </span>
@@ -125,7 +125,7 @@ export default function Header() {
             <Link
               href="/#contact"
               onClick={() => setOpen(false)}
-              className="mt-4 block rounded-md bg-signal px-4 py-3 text-center text-sm font-medium text-white transition hover:brightness-110"
+              className="btn-shine mt-4 block rounded-md bg-signal px-4 py-3 text-center text-sm font-medium text-white transition hover:brightness-110"
             >
               Request For a Quote
             </Link>

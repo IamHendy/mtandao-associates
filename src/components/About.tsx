@@ -32,7 +32,7 @@ export default function About() {
       <SectionHeading title="About Mtandao Associates" />
 
       <div className="grid lg:grid-cols-4 gap-10">
-        <div className="lg:col-span-3">
+        <div className="lg:col-span-3" data-reveal>
           <div role="tablist" aria-label="About Mtandao Associates" className="flex flex-wrap border-b border-line/10">
             {tabs.map((t, i) => (
               <button
@@ -62,9 +62,14 @@ export default function About() {
 
         <div className="space-y-4">
           <p className="font-display font-bold uppercase text-sm tracking-wide">Why partner with us</p>
-          {reasons.map(({ icon: Icon, title, text }) => (
-            <div key={title} className="flex gap-4 rounded-md bg-bar p-4 text-white">
-              <Icon className="w-7 h-7 shrink-0 text-signal" aria-hidden="true" />
+          {reasons.map(({ icon: Icon, title, text }, i) => (
+            <div
+              key={title}
+              data-reveal
+              style={{ "--d": `${150 + i * 120}ms` } as React.CSSProperties}
+              className="group flex gap-4 rounded-md border border-white/10 bg-bar p-4 text-white transition-[border-color,translate] duration-300 hover:translate-x-1 hover:border-signal/60"
+            >
+              <Icon className="icon-bounce w-7 h-7 shrink-0 text-signal" aria-hidden="true" />
               <div>
                 <p className="font-display font-bold text-sm">{title}</p>
                 <p className="text-white/70 text-sm">{text}</p>

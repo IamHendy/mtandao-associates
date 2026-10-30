@@ -87,7 +87,7 @@ export default function ImageSlider() {
               <div className="absolute inset-y-0 left-0 right-0 mx-auto max-w-6xl px-6 flex flex-col justify-center">
                 <p className="font-display font-bold text-3xl md:text-5xl text-white max-w-xl">{s.title}</p>
                 <p className="text-white/85 text-lg mt-4 max-w-md">{s.caption}</p>
-                <a href="#contact" tabIndex={i === index ? 0 : -1} className="mt-8 w-fit rounded-md bg-signal px-6 py-3 text-sm font-medium text-white hover:brightness-110 transition">Request For a Quote</a>
+                <a href="#contact" tabIndex={i === index ? 0 : -1} className="btn-shine mt-8 w-fit rounded-md bg-signal px-6 py-3 text-sm font-medium text-white hover:brightness-110 transition">Request For a Quote</a>
               </div>
             </div>
           ))}

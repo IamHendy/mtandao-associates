@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import Splash from "@/components/Splash";
+import RevealOnScroll from "@/components/RevealOnScroll";
 import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
@@ -17,8 +18,9 @@ export const metadata: Metadata = {
 
 // Runs before first paint:
 // 1. Apply the saved theme, or the dark (black) theme until the visitor picks one.
-// 2. Skip the logo intro if it already played in this browser session.
-const startupScript = `(function(){var d=document.documentElement;d.dataset.theme="dark";try{d.dataset.theme=localStorage.getItem("theme")||"dark"}catch(e){}try{if(sessionStorage.getItem("splash-seen")){d.classList.add("splash-seen")}else{sessionStorage.setItem("splash-seen","1")}}catch(e){}})()`;
+// 2. Mark that JavaScript runs (enables scroll-reveal animations).
+// 3. Skip the logo intro if it already played in this browser session.
+const startupScript = `(function(){var d=document.documentElement;d.classList.add("js");d.dataset.theme="dark";try{d.dataset.theme=localStorage.getItem("theme")||"dark"}catch(e){}try{if(sessionStorage.getItem("splash-seen")){d.classList.add("splash-seen")}else{sessionStorage.setItem("splash-seen","1")}}catch(e){}})()`;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -28,6 +30,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="bg-graphite text-ink font-body">
         <Splash />
+        <RevealOnScroll />
         {children}
       </body>
     </html>

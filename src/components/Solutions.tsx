@@ -11,13 +11,14 @@ export default function Solutions() {
     <section id="solutions" className="max-w-6xl mx-auto px-6 py-24">
       <SectionHeading title="Our Solutions" />
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {solutions.map((s) => (
+        {solutions.map((s, i) => (
           <ServiceCard
             key={s.slug}
             title={s.title}
             summary={s.summary}
             image={s.image}
             href={`/services/${s.slug}`}
+            index={i}
           />
         ))}
       </div>
