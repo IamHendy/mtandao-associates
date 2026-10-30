@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
+import Logo from "@/components/Logo";
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
 import { useState } from "react";
@@ -11,6 +11,7 @@ const links = [
   { label: "About Us", href: "/#about" },
   { label: "Services", href: "/#services" },
   { label: "Solutions", href: "/#solutions" },
+  { label: "How We Work", href: "/#how-we-work" },
   { label: "Training", href: "/training" },
   { label: "Contact", href: "/#contact" },
 ];
@@ -56,16 +57,7 @@ export default function Header() {
       {/* Logo band */}
       <div className="bg-panel border-b border-line/10">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between gap-6">
-          <Link href="/" className="flex items-center gap-3">
-            <Image src="/logo.png" alt="" width={70} height={56} priority className="rounded-sm" />
-            <span className="font-display font-bold text-sm leading-tight tracking-wide">
-              MTANDAO
-              <br />
-              ASSOCIATES
-              <br />
-              LIMITED
-            </span>
-          </Link>
+          <Logo width={76} priority />
 
           <div className="hidden lg:flex items-center gap-10">
             <div className="flex items-center gap-3">

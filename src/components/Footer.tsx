@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Logo from "@/components/Logo";
 import Link from "next/link";
 
 const links = [
@@ -6,6 +6,7 @@ const links = [
   { label: "About Us", href: "/#about" },
   { label: "Services", href: "/#services" },
   { label: "Solutions", href: "/#solutions" },
+  { label: "How We Work", href: "/#how-we-work" },
   { label: "Training", href: "/training" },
   { label: "Contact", href: "/#contact" },
   { label: "Terms and Conditions", href: "/terms" },
@@ -16,15 +17,8 @@ export default function Footer() {
     <footer className="bg-bar text-white border-t border-white/10">
       <div className="max-w-6xl mx-auto px-6 py-20 grid sm:grid-cols-2 lg:grid-cols-3 gap-12">
         <div>
-          <div className="inline-flex items-center gap-3 bg-white rounded-sm p-2 pr-4 mb-5">
-            <Image src="/logo.png" alt="" width={56} height={45} className="rounded-sm" />
-            <span className="font-display font-bold text-xs leading-tight text-black">
-              MTANDAO
-              <br />
-              ASSOCIATES
-              <br />
-              LIMITED
-            </span>
+          <div className="mb-5">
+            <Logo width={72} onDark />
           </div>
           <p className="text-white/70 text-sm leading-relaxed">
             <strong className="text-white/90">Mtandao Associates Ltd</strong> is a leader in network
