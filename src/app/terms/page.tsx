@@ -82,7 +82,7 @@ export default function TermsPage() {
     <main>
       <Header />
 
-      <article className="max-w-3xl mx-auto px-6 pt-32 pb-24">
+      <article className="max-w-3xl mx-auto px-6 pt-16 pb-24">
         <h1 className="font-display text-4xl mb-3">Terms and Conditions</h1>
         <p className="text-muted text-sm mb-12">Last updated: 23 October 2026</p>
 

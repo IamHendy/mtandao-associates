@@ -8,7 +8,7 @@ export default function ServicesPage() {
     <main>
       <Header />
 
-      <section className="max-w-4xl mx-auto px-6 pt-32 pb-24">
+      <section className="max-w-4xl mx-auto px-6 pt-16 pb-24">
         <h1 className="font-display text-4xl mb-6">Our services in detail</h1>
 
         <p className="text-muted mb-16 max-w-xl">

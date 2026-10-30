@@ -13,6 +13,7 @@ sd-wan.jpg                https://www.pexels.com/photo/2881224/
 email-security.jpg        https://www.pexels.com/photo/5605061/
 backup-recovery.jpg       https://www.pexels.com/photo/17489160/
 managed-services.jpg      https://www.pexels.com/photo/1181354/
+training.jpg              https://www.pexels.com/photo/17471201/
 wifi-access-point.jpg     https://www.pexels.com/photo/29711663/
 
 data-protection.jpg       Supplied by Mtandao Associates (GDPR / DPA word cloud).

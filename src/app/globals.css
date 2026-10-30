@@ -13,6 +13,8 @@
   --color-line: var(--line);          /* borders and dividers, used with opacity (line/10) */
   --color-signal: #E31E24;            /* logo red: CTAs and accents */
   --color-secure: var(--ink);
+  --color-bar: #0A0A0B;             /* header bars and footer: always black */
+  --color-bar-deep: #141414;
 
   --font-display: var(--font-display);
   --font-body: var(--font-body);
@@ -30,7 +32,7 @@
   --line: #FFFFFF;
 }
 
-/* Light theme: chosen with the toggle, or the system setting when no choice is saved */
+/* Light theme: only when chosen with the toggle. Dark (black) is the default. */
 :root[data-theme="light"] {
   color-scheme: light;
   --bg: #FAFAF8;
@@ -41,17 +43,8 @@
   --muted: #555555;
   --line: #000000;
 }
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme]) {
-    color-scheme: light;
-    --bg: #FAFAF8;
-    --panel: #FFFFFF;
-    --panel-hover: #F2F2EF;
-    --panel-active: #FFF3F3;
-    --ink: #141414;
-    --muted: #555555;
-    --line: #000000;
-  }
+html {
+  scroll-padding-top: 64px; /* keeps anchored sections clear of the sticky menu bar */
 }
 
 body {

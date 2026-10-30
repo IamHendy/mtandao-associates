@@ -37,7 +37,7 @@ export default function ImageSlider() {
 
   return (
     <section
-      className="max-w-6xl mx-auto px-6 py-20"
+      className="relative"
       aria-roledescription="carousel"
       aria-label="Photos from our work"
       onMouseEnter={() => setPaused(true)}
@@ -45,7 +45,7 @@ export default function ImageSlider() {
       onFocus={() => setPaused(true)}
       onBlur={() => setPaused(false)}
     >
-      <div className="relative aspect-[16/9] md:aspect-[21/9] overflow-clip rounded-sm border border-line/10 bg-panel">
+      <div className="relative h-[60vh] min-h-96 max-h-[640px] overflow-clip bg-bar">
         <div
           className="flex h-full transition-transform duration-700 ease-out"
           style={{ transform: `translateX(-${index * 100}%)` }}
@@ -77,15 +77,17 @@ export default function ImageSlider() {
                   src={s.src}
                   alt={s.caption}
                   fill
-                  sizes="(max-width: 1152px) 100vw, 1104px"
+                  sizes="100vw"
                   className="object-cover"
                   priority={i === 0}
                   loading={i === 0 ? undefined : "eager"}
                 />
               )}
-              <div className="absolute inset-x-0 bottom-0 bg-black/70 px-6 py-4 md:px-10">
-                <p className="font-display text-xl md:text-2xl text-white">{s.title}</p>
-                <p className="text-white/75 text-sm mt-1">{s.caption}</p>
+              <div className="absolute inset-0 bg-gradient-to-r from-bar/90 via-bar/50 to-transparent" />
+              <div className="absolute inset-y-0 left-0 right-0 mx-auto max-w-6xl px-6 flex flex-col justify-center">
+                <p className="font-display font-bold text-3xl md:text-5xl text-white max-w-xl">{s.title}</p>
+                <p className="text-white/85 text-lg mt-4 max-w-md">{s.caption}</p>
+                <a href="#contact" tabIndex={i === index ? 0 : -1} className="mt-8 w-fit rounded-md bg-signal px-6 py-3 text-sm font-medium text-white hover:brightness-110 transition">Request For a Quote</a>
               </div>
             </div>
           ))}
@@ -94,27 +96,27 @@ export default function ImageSlider() {
         <button
           onClick={prev}
           aria-label="Previous slide"
-          className="absolute left-3 top-1/2 -translate-y-1/2 bg-black/50 p-2 rounded-sm text-white hover:bg-black/70 transition"
+          className="hidden md:block absolute left-3 top-1/2 -translate-y-1/2 bg-black/50 p-2 rounded-sm text-white hover:bg-black/70 transition"
         >
           <ChevronLeft className="w-5 h-5" />
         </button>
         <button
           onClick={next}
           aria-label="Next slide"
-          className="absolute right-3 top-1/2 -translate-y-1/2 bg-black/50 p-2 rounded-sm text-white hover:bg-black/70 transition"
+          className="hidden md:block absolute right-3 top-1/2 -translate-y-1/2 bg-black/50 p-2 rounded-sm text-white hover:bg-black/70 transition"
         >
           <ChevronRight className="w-5 h-5" />
         </button>
       </div>
 
-      <div className="flex justify-center gap-2 mt-4">
+      <div className="absolute bottom-5 inset-x-0 flex justify-center gap-2">
         {slides.map((s, i) => (
           <button
             key={s.src}
             onClick={() => setIndex(i)}
             aria-label={`Show slide ${i + 1}: ${s.title}`}
             aria-current={i === index}
-            className={`h-1 w-8 transition ${i === index ? "bg-signal" : "bg-line/20 hover:bg-line/40"}`}
+            className={`h-1 w-8 transition ${i === index ? "bg-signal" : "bg-white/40 hover:bg-white/70"}`}
           />
         ))}
       </div>

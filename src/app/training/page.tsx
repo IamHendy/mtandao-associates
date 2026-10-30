@@ -44,7 +44,7 @@ export default function TrainingPage() {
     <main>
       <Header />
 
-      <section className="max-w-4xl mx-auto px-6 pt-32 pb-24">
+      <section className="max-w-4xl mx-auto px-6 pt-16 pb-24">
         <h1 className="font-display text-4xl mb-6">We offer training</h1>
         <p className="text-muted mb-4 max-w-2xl">
           We train company staff, ICT teams and students in cybersecurity, GRC, data

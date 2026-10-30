@@ -32,7 +32,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
     <main>
       <Header />
 
-      <article className="max-w-3xl mx-auto px-6 pt-32 pb-20">
+      <article className="max-w-3xl mx-auto px-6 pt-16 pb-20">
         <Link href="/#services" className="text-sm text-muted hover:text-ink transition">
           Back to What We Do
         </Link>

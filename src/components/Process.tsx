@@ -11,20 +11,21 @@ import {
   Search,
   Server,
 } from "lucide-react";
+import SectionHeading from "@/components/SectionHeading";
 
 const steps = [
   {
     n: "01",
     title: "Assess",
     icon: Search,
-    desc: "Systems audit, vulnerability scan, and compliance check against local data protection requirements.",
+    desc: "Systems audit, vulnerability assessment and penetration testing, plus a Data Protection Act compliance check.",
     output: "Written audit report",
   },
   {
     n: "02",
     title: "Deploy",
     icon: Server,
-    desc: "Firewall, endpoint protection, and any custom systems (FOSA/BOSA, CRM, AML tooling) configured for your environment.",
+    desc: "Firewalls, MFA, endpoint and email security, SD-WAN or backup, configured for your environment.",
     output: "Systems configured and running",
   },
   {
@@ -38,7 +39,7 @@ const steps = [
     n: "04",
     title: "Monitor",
     icon: Activity,
-    desc: "Ongoing AI-driven threat detection and support as your systems and risks evolve.",
+    desc: "Managed support and monitoring as your systems and risks evolve.",
     output: "Ongoing support",
   },
 ];
@@ -197,9 +198,9 @@ export default function Process() {
   const shown = Math.max(active, 0);
 
   return (
-    <section className="max-w-6xl mx-auto px-6 py-24 border-t border-line/10" id="solutions">
-      <h2 className="font-display text-3xl mb-3">How we work</h2>
-      <p className="text-muted mb-12 max-w-xl">
+    <section className="max-w-6xl mx-auto px-6 py-24 border-t border-line/10" id="how-we-work">
+      <SectionHeading title="How We Work" />
+      <p className="text-muted mb-12 max-w-xl mx-auto text-center -mt-6">
         Most engagements follow these four steps, from the first audit to ongoing support.
       </p>
 
