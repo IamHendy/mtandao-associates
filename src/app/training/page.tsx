@@ -5,24 +5,26 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Training | Mtandao Associates",
+  title: "Cyber-awareness, GRC & Data Protection Training (LMS) | Mtandao Associates",
   description:
-    "Cybersecurity, GRC, data protection and AI automation training for staff and students, delivered through Mtandao Institute.",
+    "Cyber-awareness, cybersecurity, GRC compliance, data protection and AI automation training for staff and students, in person and online on the Mtandao Institute LMS.",
+  keywords: ["Cyber-awareness", "Cyber Security Awareness Training", "GRC Compliance", "Data Protection", "LMS", "Cybersecurity Training Kenya"],
+  alternates: { canonical: "/training" },
 };
 
 const INSTITUTE_URL = "https://mtandaoinstitute.co.ke";
 
 const courses = [
   {
-    title: "Cyber Security Awareness",
+    title: "Cyber-awareness",
     desc: "For all staff: common threats like malware, spear phishing and ransomware, and how to recognise and handle them.",
   },
   {
     title: "Cybersecurity",
-    desc: "Practical security skills: firewalls, endpoint protection, threat detection and incident response.",
+    desc: "Practical security skills: WatchGuard firewalls, antivirus and EDR, threat detection and incident response.",
   },
   {
-    title: "Governance, Risk & Compliance",
+    title: "GRC Compliance (Governance, Risk & Compliance)",
     desc: "How to write ICT policies, assess risk and prepare for audits in regulated organisations.",
   },
   {
@@ -47,9 +49,10 @@ export default function TrainingPage() {
       <section className="max-w-4xl mx-auto px-6 pt-16 pb-24">
         <h1 className="font-display text-4xl mb-6">We offer training</h1>
         <p className="text-muted mb-4 max-w-2xl">
-          We train company staff, ICT teams and students in cybersecurity, GRC, data
-          protection and AI automation. Courses are run through Mtandao Institute, our
-          training arm, with both in-person sessions and e-campus learning.
+          We train company staff, ICT teams and students in cyber-awareness,
+          cybersecurity, GRC compliance, data protection and AI automation. Courses are
+          run through Mtandao Institute, our training arm, with both in-person sessions
+          and online e-campus learning on our LMS (Learning Management System).
         </p>
         <p className="text-muted mb-10 max-w-2xl">
           Course dates, fees and enrolment are on the Mtandao Institute website.

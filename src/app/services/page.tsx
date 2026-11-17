@@ -1,7 +1,16 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { services } from "@/data/services";
+
+export const metadata: Metadata = {
+  title: "Services: WatchGuard Firewall, Panda EDR, Systems Audit & GRC | Mtandao Associates",
+  description:
+    "WatchGuard firewalls, Panda EDR and antivirus, systems audits, data protection and GRC compliance, email security, backup and managed ICT services in Kenya.",
+  keywords: ["WatchGuard Firewall", "Panda EDR", "EDR", "Antivirus", "Systems Audit", "Data Protection", "GRC Compliance"],
+  alternates: { canonical: "/services" },
+};
 
 export default function ServicesPage() {
   return (
@@ -14,7 +23,8 @@ export default function ServicesPage() {
         <p className="text-muted mb-16 max-w-xl">
           Mtandao Associates implements enterprise-grade security solutions that
           protect the critical network assets of businesses of all types and sizes,
-          through simplicity. Below is what each service covers.
+          through simplicity: WatchGuard firewalls, Panda EDR and antivirus, systems
+          audits, data protection and GRC compliance. Below is what each service covers.
         </p>
 
         <div className="space-y-14">

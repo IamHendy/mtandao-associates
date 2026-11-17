@@ -17,6 +17,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${service.title} | Mtandao Associates`,
     description: service.summary,
+    keywords: "keywords" in service ? service.keywords : undefined,
+    alternates: { canonical: `/services/${service.slug}` },
   };
 }
 

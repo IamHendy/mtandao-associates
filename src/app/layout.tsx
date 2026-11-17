@@ -14,6 +14,28 @@ export const metadata: Metadata = {
   title: "Mtandao Associates | Firewall, Endpoint Security and Compliance in Kenya",
   description:
     "Mtandao Associates installs and supports WatchGuard firewalls, endpoint protection, systems audits and AML tooling for SACCOs, banks and businesses in Kenya.",
+  keywords: [
+    "WatchGuard Firewall",
+    "Cyber-awareness",
+    "Cyber Security Awareness Training",
+    "EDR",
+    "Panda EDR",
+    "Data Protection",
+    "Systems Audit",
+    "Antivirus",
+    "GRC Compliance",
+    "LMS",
+    "Endpoint Security",
+    "Kenya",
+  ],
+  openGraph: {
+    type: "website",
+    siteName: "Mtandao Associates",
+    title: "Mtandao Associates | Firewall, Endpoint Security and Compliance in Kenya",
+    description:
+      "WatchGuard firewalls, Panda EDR and antivirus, systems audits, data protection, GRC compliance and cyber-awareness training (LMS) for businesses in Kenya.",
+    images: ["/logo.png"],
+  },
 };
 
 // Runs before first paint:

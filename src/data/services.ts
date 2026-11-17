@@ -18,9 +18,10 @@ export const services = [
   },
   {
     slug: "firewall",
-    title: "UTM / Next-Generation Firewall",
+    title: "WatchGuard Firewall (UTM / Next-Generation)",
     image: "/services/firewall-appliance.jpg",
-    summary: "WatchGuard firewalls that protect your network against zero-day and crypto attacks.",
+    summary: "WatchGuard Firebox UTM and next-generation firewalls that protect your network against zero-day and crypto attacks.",
+    keywords: ["WatchGuard Firewall", "WatchGuard Firebox", "UTM firewall", "Next-generation firewall", "Firewall Kenya"],
     description: [
       "The threat landscape changes every day. The firewall you put at your network edge has to stop zero-day and crypto attacks, not just the threats it knew about when it was installed.",
       "We partner with WatchGuard because its firewalls are built to be among the smartest, fastest and most effective network security products available, and they are easy to deploy and manage. WatchGuard gives IT teams enterprise-grade security and threat visibility, whatever the organization's budget, size or complexity.",
@@ -65,15 +66,16 @@ export const services = [
   },
   {
     slug: "endpoint-security",
-    title: "Endpoint Security & EDR",
+    title: "Endpoint Security, Antivirus & Panda EDR",
     image: "/services/endpoint-laptop.jpg",
-    summary: "Next-gen antivirus, EDR and DNS filtering, delivered by one lightweight agent and one cloud console.",
+    summary: "Panda EDR and next-gen antivirus with DNS filtering, delivered by one lightweight agent and one cloud console.",
+    keywords: ["Panda EDR", "EDR", "Antivirus", "Endpoint Detection and Response", "Endpoint Security", "WatchGuard EPDR"],
     description: [
-      "Our endpoint security solutions stop advanced cyberattacks on laptops, desktops and servers with next-gen antivirus (EPP), Endpoint Detection and Response (EDR) and DNS filtering.",
+      "Our endpoint security solutions, built on Panda EDR technology (now part of WatchGuard), stop advanced cyberattacks on laptops, desktops and servers with next-gen antivirus (EPP), Endpoint Detection and Response (EDR) and DNS filtering.",
       "You can add integrated modules for patch management, sensitive data protection, disk and USB encryption and security insights, all delivered by a single lightweight agent and managed from one cloud-based platform.",
     ],
     details: [
-      "Next-generation antivirus (EPP) and Endpoint Detection and Response (EDR).",
+      "Panda next-generation antivirus (EPP) and Panda EDR (Endpoint Detection and Response).",
       "DNS filtering and patch management.",
       "Sensitive data protection and encryption of disks and USB drives.",
       "One lightweight agent, managed from a single cloud console.",
@@ -81,9 +83,10 @@ export const services = [
   },
   {
     slug: "penetration-testing",
-    title: "Penetration Testing & Systems Audit (VAPT)",
+    title: "Systems Audit & Penetration Testing (VAPT)",
     image: "/services/systems-audit.jpg",
-    summary: "Vulnerability assessment and penetration testing of your applications, network, endpoints and cloud.",
+    summary: "ICT systems audits, vulnerability assessment and penetration testing of your applications, network, endpoints and cloud.",
+    keywords: ["Systems Audit", "ICT Audit", "Penetration Testing", "VAPT", "Vulnerability Assessment"],
     description: [
       "VAPT is security testing that finds vulnerabilities in your running applications, network, endpoints and cloud. Vulnerability Assessment scans your digital assets and reports existing flaws. Penetration Testing then exploits those vulnerabilities to show the real security gaps.",
       "Each has its own strengths, so we usually do both together for a complete analysis, and give you a clear report of what to fix.",
@@ -194,15 +197,18 @@ export const services = [
   },
   {
     slug: "data-protection",
-    title: "Data Protection Act Compliance",
+    title: "Data Protection & GRC Compliance",
     image: "/services/data-protection.jpg",
-    summary: "A-Z consultancy to bring your organization into compliance with the Data Protection Act.",
+    summary: "A-Z Data Protection Act and GRC (governance, risk and compliance) consultancy for your organization.",
+    keywords: ["Data Protection", "Data Protection Act Kenya", "GRC Compliance", "Governance Risk and Compliance", "ICT Policies"],
     description: [
       "We offer complete, A-Z consultancy on Data Protection Act compliance, from understanding what the law requires of your organization to putting the right controls in place.",
+      "Our GRC compliance work covers ICT policies, risk assessments and audit preparation, so regulated organizations such as SACCOs and banks stay ready for their regulators.",
     ],
     details: [
       "A-Z Data Protection Act compliance consultancy.",
       "Practical controls that protect personal data across your systems.",
+      "GRC compliance: ICT policies, risk assessments and audit preparation.",
     ],
   },
 ];
