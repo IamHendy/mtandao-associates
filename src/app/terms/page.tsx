@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Terms and Conditions | Mtandao Associates",
   description: "The terms that apply when you use the Mtandao Associates website or contact us.",
+  alternates: { canonical: "/terms" },
 };
 
 const sections = [
